@@ -1,0 +1,66 @@
+s = str(""" Dunkel war's, der Mond schien helle,
+Schneebedeckt die grüne Flur,
+Als ein Auto blitzesschnelle
+Langsam um die Ecke fuhr.
+
+Drinnen saßen stehend Leute
+Schweigend ins Gespräch vertieft,
+Als ein totgeschossner Hase
+Auf der Sandbank Schlittschuh lief.
+
+Und der Wagen fuhr im Trabe
+Rückwärts einen Berg hinauf.
+Droben zog ein alter Rabe
+Grade eine Turmuhr auf.
+
+Ringsumher herrscht tiefes Schweigen
+Und mit fürchterlichem Krach
+Spielen in des Grases Zweigen
+Zwei Kamele lautlos Schach.
+
+Und auf einer roten Bank,
+Die blau angestrichen war
+Saß ein blondgelockter Jüngling
+Mit kohlrabenschwarzem Haar.
+
+Neben ihm 'ne alte Schachtel,
+Zählte kaum erst sechzehn Jahr,
+Und sie aß ein Butterbrot,
+Das mit Schmalz bestrichen war.
+
+Oben auf dem Apfelbaume,
+Der sehr süße Birnen trug,
+Hing des Frühlings letzte Pflaume
+Und an Nüssen noch genug.
+
+Von der regennassen Straße
+Wirbelte der Staub empor.
+Und ein Junge bei der Hitze
+Mächtig an den Ohren fror.
+
+Beide Hände in den Taschen
+Hielt er sich die Augen zu.
+Denn er konnte nicht ertragen,
+Wie nach Veilchen roch die Kuh.
+
+Und zwei Fische liefen munter
+Durch das blaue Kornfeld hin.
+Endlich ging die Sonne unter
+Und der graue Tag erschien.
+
+Dies Gedicht schrieb Wolfgang Goethe
+Abends in der Morgenröte,
+Als er auf dem Nachttopf saß
+Und seine Morgenzeitung las.""")
+
+anzahl1 = s.count("die")
+print("Anzahl „die“ (Original):", anzahl1)
+
+# Alles in Kleinbuchstaben umwandeln und in neuer String speichern
+text_klein = s.lower()
+
+# Erneut zählen
+anzahl2 = text_klein.count("die")
+print("Anzahl „die“ (Kleinbuchstaben):", anzahl2)
+
+# anzahl1 zählen nur die, anzahl2 zählen auch DIE, Die

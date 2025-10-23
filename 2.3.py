@@ -1,0 +1,7 @@
+x = int(input("Bitte geben Sie eine maximal vierstellige Zahl ein: "))
+s = str(x).zfill(4)
+print("Ihre Zahl besteht aus:")
+print(s[0] or "0", "Tausende")
+print(s[1] or "0", "Hunderter")
+print(s[2] or "0", "Zehner")
+print(s[3] or "0", "Einer")
