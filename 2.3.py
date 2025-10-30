@@ -5,3 +5,5 @@ print(s[0] or "0", "Tausende")
 print(s[1] or "0", "Hunderter")
 print(s[2] or "0", "Zehner")
 print(s[3] or "0", "Einer")
+
+#modulo

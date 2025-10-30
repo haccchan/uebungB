@@ -1,6 +1,6 @@
 import turtle as t4
 
-c = input("Geben Sie die Farbe ein (z.B: red, green, yellow,... ")
+c = input("Geben Sie die Farbe ein (z.B: red, green, yellow,... )")
 t4.color(c)
 t4.fillcolor(c)
 

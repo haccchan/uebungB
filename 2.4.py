@@ -5,3 +5,4 @@ for i in range (0,len(s),1):
         summe += int(s[i])
 
 print(summe)
+

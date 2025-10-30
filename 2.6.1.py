@@ -24,7 +24,7 @@ r = float(input("Ratio (z.B: 1.0, 0.5,...): "))
 
 t1.left(45)
 t1.penup()
-t1.goto(-200, 0)
+t1.goto(-200*r, 0)
 t1.pendown()
 t1.hideturtle()
 
@@ -33,7 +33,7 @@ for i in range(4):
     t1.left(90)
 
 t1.penup()
-t1.goto(-200, r * 100 )
+t1.goto(-200*r, r * 100 )
 t1.pendown()
 t1.right(45)
 
