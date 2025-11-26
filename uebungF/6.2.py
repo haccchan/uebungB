@@ -13,10 +13,7 @@ class Person:
     def get_geburtsdatum(self):
         return self.__jahr, self.__monat, self.__tage
 
-geburtstage = {
-    "Trang Pham" : Person("Trang", "Pham", 2005, 11, 7, "2944", "ptirhjt"),
-    "Max Mustermann" : Person("Max", "Mustermann", 1990, 1, 3, "1234", "max@test.de")
-}
+geburtstage = {}
 
 
 
