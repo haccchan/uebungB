@@ -11,8 +11,6 @@ mittelfeld = ["Brandt", "Can", "Draxler", "Goretzka", "Guendogan",
 
 angriff = ["Gnabry", "Reus", "Sane", "Werner"]
 
-import random
-
 # Torwart (1 Spieler)
 torwart = random.choice(tor)
 

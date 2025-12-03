@@ -1,13 +1,12 @@
-string : str = "Hallo Welt"
-
+string = "Aa 2"
 def zahlen(s):
-    s = s.replace(" ", "")
     low : int = 0
     high : int = 0
     for i in s:
+
         if i.islower():
             low += 1
-        else:
+        elif i.isupper():
             high += 1
     return low,high
 

@@ -15,7 +15,8 @@ while start:
         geburtstage.pop(name)
 
     if e == "s":
-        print(geburtstage)
+        for key in geburtstage.keys():
+            print(key)
         name = str(input("Wer suchen Sie?"))
         for i in range(len(geburtstage[name])):
             print(geburtstage[name][i], end=".")

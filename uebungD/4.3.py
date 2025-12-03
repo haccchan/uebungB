@@ -24,3 +24,7 @@ while boolean:
         boolean = False
         print("Gewonnen! Das Wort war:", wort)
         print("Fehlversuche:", v)
+
+    if(v>5):
+        boolean = False
+        print("Verloren! Schwach! Antwort:", wort)

@@ -16,6 +16,6 @@ def zeichnen():
 
 for i in range(16):
     zeichnen()
-    t2.right(360/14)
+    t2.right(360/16)
 
 t2.done()

@@ -13,9 +13,12 @@ class Person:
     def get_geburtsdatum(self):
         return self.__jahr, self.__monat, self.__tage
 
-geburtstage = {}
+geburtstage = {
+    "1" : Person("Trang", "Pham", 2005, 11, 7, "2944", "ptirhjt"),
+   "2" : Person("Max", "Mustermann", 1990, 1, 3, "1234", "max@test.de")
+}
 
-
+# geburtstage["1"].vorname = "Le Pham"
 
 def print_menu():
     return "\n (n) neuen Eintrag anlegen \n (d) einen Eintrag löschen \n (s) nach einer Person suchen \n (l) alle Einträge auflisten \n (q) Kalenderprogramm beenden "
@@ -34,14 +37,14 @@ def n():
     geburtstage[key] = person
 
 def d():
-    for key in geburtstage:
-        print(key)
-    name = str(input("Welcher Kontakt möchten Sie löschen? (Name eingeben)"))
+    for key, person in geburtstage.items():
+        print( key , ". " ,person.vorname ," ", person.nachname)
+    name = str(input("Welcher Kontakt möchten Sie löschen? (Ordnung eingeben)"))
     geburtstage.pop(name)
 
 def l():
     for key, person in geburtstage.items():
-        print(key + ": " 
+        print(person.vorname + " " + person.nachname +
               ", Geburtstag: " + str(person.get_geburtsdatum()) +
               ", Telefon: " + person.telefon +
               ", Email: " + person.email)

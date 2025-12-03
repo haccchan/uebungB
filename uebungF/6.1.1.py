@@ -1,6 +1,5 @@
-
 class Punkt:
-    def __init__(self, x : float = 0, y : float = 0):
+    def __init__(self, x: float = 0, y: float = 0):
         self._x = x
         self._y = y
 
@@ -10,64 +9,70 @@ class Punkt:
         return (dx**2 + dy**2)**0.5
 
     def shift(self, x_val, y_val):
-        self._x = self._x + x_val
-        self._y = self._y + y_val
+        self._x += x_val
+        self._y += y_val
 
     def show(self):
-        print("Punkt(" + str(self._x) + ", " + str(self._y) + ")")
+        return f"Punkt({self._x}, {self._y})"
+
 
 import math
 
 class Circle:
-    def __init__(self, x : float = 0, y : float = 0, radius : float = 1):
-        self._radius = radius
+    def __init__(self, x: float = 0, y: float = 0, radius: float = 1):
         self._x = x
         self._y = y
+        self._radius = radius
 
-    def distance(self, k):
-        dx = k._x - self._x
-        dy = k._y - self._y
-        return math.sqrt(dx * dx + dy * dy)
+    def contains(self, p):
+        abstand = math.sqrt((p._x - self._x)**2 + (p._y - self._y)**2)
+        return abstand <= self._radius
 
-    def shift(self,x_val,y_val):
-        self._x = self._x + x_val
-        self._y = self._y + y_val
+    def intersect(self, c):
+        abstand = math.sqrt((c._x - self._x)**2 + (c._y - self._y)**2)
+        return abstand <= (self._radius + c._radius)
+
+    def distance(self, obj):
+        dx = obj._x - self._x
+        dy = obj._y - self._y
+        abim = math.sqrt(dx*dx + dy*dy)
+
+        if type(obj) == Punkt:
+            if abim <= self._radius:
+                return 0
+            return abs(abim - self._radius)
+
+        if type(obj) == Circle:
+            if abim <= self._radius + obj._radius:
+                return 0
+            return abs(abim - (self._radius + obj._radius))
+
+    def shift(self, x_val, y_val):
+        self._x += x_val
+        self._y += y_val
+
+    def scale(self, factor):
+        self._radius *= factor
 
     def show(self):
-        print("Kreis: Mittelpunkt(" + str(self._x) + ", " + str(self._y) + "). Radius: " + str(self._radius))
-
-    def scale(self,factor):
-        self._radius = self._radius * factor
-
-    def contains(self,p):
-        if self.distance(p) < self._radius:
-            return True
-        else:
-            return False
-
-    def intersect(self,c):
-        if c._radius < self._radius:
-            return True
-        else:
-            return False
+        return f"Kreis: Mittelpunkt({self._x}, {self._y}), Radius: {self._radius}"
 
 
 p1 = Punkt()
-p1.show()
-p1.shift(2,1)
-p1.show()
-p2 = Punkt(3,1)
-p2.show()
+print(p1.show())
+p1.shift(1,1)
+print(p1.show())
+p2 = Punkt(2,3)
+print(p2.show())
 print(p1.distance(p2))
-
 k1 = Circle()
-k1.show()
-k1.shift(2,1)
-k1.show()
-k1.scale(2)
-k1.show()
+print(k1.show())
+k1.shift(1,1)
+print(k1.show())
+k1.scale(0.5)
+print(k1.show())
 print(k1.contains(p1))
-k2 = Circle(3,4,3)
-k2.show()
+k2 = Circle(1,2,0.8)
+print(k2.show())
 print(k2.contains(p1))
 print(k2.intersect(k1))

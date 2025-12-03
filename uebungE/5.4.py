@@ -1,4 +1,4 @@
-satz : str = "Vitaler Nebel mit Sinn ist im Leben relativ"
+satz : str = "Vitaler Nebel mit Sinn ist im Leben relativ."
 
 def istPalindrom(s):
     s = s.lower().replace(" ", "")

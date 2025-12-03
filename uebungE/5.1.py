@@ -1,6 +1,9 @@
 l1 = [8,2,3,0,7]
-s: int = 0
-for i in l1:
-    s = s + i
+def f(list):
+    s: int = 0
+    for i in list:
+        s = s + i
 
-print(s)
+    return s
+
+print(f(l1))

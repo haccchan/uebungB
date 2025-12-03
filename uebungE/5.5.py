@@ -4,25 +4,25 @@ geburtstage = {}
 def print_menu():
     return "\nAusgabe \n (n) neuen Eintrag anlegen \n (d) einen Eintrag löschen \n (s) nach einer Person suchen \n (l) alle Einträge auflisten \n (q) Kalenderprogramm beenden "
 
-def n(geburtstage):
+def n():
     name = str(input("Geburtstag Name: "))
     jahr = int(input("Geburtstag Jahr: "))
     monat = int(input("Geburtstag Monat: "))
     tage = int(input("Geburtstag Tage: "))
     geburtstage[name] = (jahr, monat, tage)
 
-def d(geburtstage):
+def d():
     print(geburtstage)
     name = str(input("Welche Geburtstag möchten Sie löschen? (Name eingeben)"))
     geburtstage.pop(name)
 
-def l(geburtstage):
+def l():
     for i in geburtstage:
         print(i, end=":")
         for j in range(len(geburtstage[i])):
             print(geburtstage[i][j], end=".")
 
-def s(geburtstage):
+def s():
     for key in geburtstage.keys():
         print(key)
     name = str(input("Wer suchen Sie?"))
@@ -32,13 +32,13 @@ def s(geburtstage):
 while(start):
     e = input(print_menu())
     if e == "n":
-        n(geburtstage)
+        n()
     if e == "d":
-        d(geburtstage)
+        d()
     if e == "l":
-        l(geburtstage)
+        l()
     if e == "s":
-        s(geburtstage)
+        s()
     if e == "q":
         start = False
 
