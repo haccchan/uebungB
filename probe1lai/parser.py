@@ -16,7 +16,7 @@ def parse_weight(str_input: str) -> tuple[float, str]:
 # doi trong luong
 
 def normalize(start_weight: tuple[float, str], target_unit: str) -> tuple[float, str]:
-    factors = {"mg": 1, "g": 1000, "kg": 1_000_000}
+    factors = {"mg": 1, "g": 1000, "kg": 1000000}
     value, unit = start_weight
     new_value = value * factors[unit] / factors[target_unit]
     return new_value, target_unit
