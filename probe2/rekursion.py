@@ -1,29 +1,34 @@
-def recursive_solution(x:int, schritt : int = 1) -> int:
-    print("schritt is:", schritt)
-    if x == 0:
-        return 0
-    return x**2 + recursive_solution(x-1, schritt + 1)
+#3.1 Funktion Implementierung
 
-def iterative_solution(x:int) -> int:
-    f : int = 0
-    z : int = 0
-    while (x>0):
-        f = f + x**2
-        x = x - 1
-        z = z + 1
+def recursive_solution(x: int, schritt: int = 0) -> int:
+    print(f"Schritt {schritt}: x = {x}")
+
+    if x == 1:
+        return 1
+
+    return x**2 + recursive_solution(x - 1, schritt + 1)
+
+print("Ergebnis 1 (Rekursion): ",recursive_solution(3, schritt = 1))
+
+#3.2 Iterative Umwandlung
+
+def iterative_solution(x: int) -> int:
+    f = 1
+
+    while x > 1:
+        f += x**2
+        x -= 1
 
     return f
 
+print("-------\nErgebnis 2 (Iteration): ",iterative_solution(3))
+
+#3.3 Doppelte Rekursion
+
 def second_recursion(n: float) -> float:
-    if n == 1:
-        return 1
-    if n == 0:
+    if n <= 0:
         return 1
     return second_recursion(n-1) + 2*(second_recursion(n-2))
 
-if __name__ == "__main__":
-    for i in range(2,11):
-        recursive_solution(i)
-        print(iterative_solution(i))
-        print(second_recursion(i))
+print("-------\nErgebnis 3 (doppelte Rekursion): ",second_recursion(3))
 
