@@ -13,7 +13,6 @@ def parse_weight(str_input: str) -> tuple[float, str]:
         print("Invalid input")
         return 1.0, str_input
 
-# doi trong luong
 
 def normalize(start_weight: tuple[float, str], target_unit: str) -> tuple[float, str]:
     factors = {"mg": 1, "g": 1000, "kg": 1000000}
