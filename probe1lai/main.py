@@ -26,7 +26,7 @@ def menu():
         print(second_recursion(9))
 
         if e == "3":
-            z = int(input("Geben Sie Zahl: "))
+            z = input("Geben Sie ein: ")
             z1 = parse_weight(z)
             print(z1)
             print(normalize(z1), "g")
