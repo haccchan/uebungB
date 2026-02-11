@@ -12,10 +12,16 @@ def recursive_solution(x: int, z: int = 0) -> int:
 def iterative_solution(x: int) -> int:
     s = 0
     z = 0
+#cách 1
+    for i in range(1,x+1):
+        s = s + i
+        z += 1
+#cách 2
     while x >= 0:
         s = s + x
         x = x - 1
-        z += 1
+        z +=1
+#
     print("schritt i:",z)
     return s
 #s
